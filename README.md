@@ -2,8 +2,6 @@
 
 A beautiful, secure, and user-friendly web application for managing reminders with real-time notifications. This application helps users track important deadlines and never miss an important event.
 
-![Reminder Application Screenshot](https://via.placeholder.com/800x450.png?text=Reminder+Application)
-
 ## Features
 
 - 🕒 **Real-time Reminders**: Set reminders with precise date and time
@@ -42,13 +40,13 @@ This is a client-side application that runs entirely in the browser. No server-s
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/annisacode/reminder-list.git
+   git clone https://github.com/annisacode/reminder-app.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd reminder-application
+   cd reminder-app
    ```
 
 3. Open `index.html` in your web browser:
