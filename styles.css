@@ -1,28 +1,195 @@
 body {
-    background-color: #f8f9fa;
-    font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  /* Fixed gradient syntax */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-    max-width: 600px;
+  max-width: 600px;
+  padding: 20px;
+  width: 100%;
 }
 
-.text-center {
-    margin-bottom: 30px;
+.app-title {
+  color: #fff;
+  /* White title */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
-.card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.reminder-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  /* Slightly transparent white */
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  /* Deeper shadow */
+  padding: 30px;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reminder-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 0.2rem rgba(106, 17, 203, 0.25);
+  transform: translateY(-2px);
+}
+
+.add-reminder-btn {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  /* Gradient button */
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 12px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.add-reminder-btn:hover {
+  background: linear-gradient(to right, #5a0cb0, #1565fb);
+  /* Darker gradient on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+}
+
+.add-reminder-btn:active {
+  transform: translateY(1px);
 }
 
 .list-group-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #f9f9f9;
+  /* Light grey for list items */
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn-remove {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
+.list-group-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: linear-gradient(to bottom, #6a11cb, #2575fc);
+  border-radius: 3px 0 0 3px;
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.remove-btn {
+  background-color: #dc3545;
+  /* Red */
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.remove-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(220, 53, 69, 0.4);
+}
+
+.remove-btn:active {
+  transform: translateY(1px);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  /* Space between buttons if you add more */
+}
+
+/* Add animation for new reminders */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.new-reminder {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .reminder-card {
+    background-color: rgba(33, 37, 41, 0.95);
+    color: #f8f9fa;
+  }
+  
+  .form-group label {
+    color: #e9ecef;
+  }
+  
+  .form-control {
+    background-color: #343a40;
+    border-color: #495057;
+    color: #f8f9fa;
+  }
+  
+  .list-group-item {
+    background-color: #343a40;
+    border-color: #495057;
+    color: #f8f9fa;
+  }
+  
+  .list-group-item:hover {
+    background-color: #2b3035;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .reminder-card {
+    padding: 20px;
+  }
+  
+  .app-title {
+    font-size: 1.8rem;
+  }
 }
